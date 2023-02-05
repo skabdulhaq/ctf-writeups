@@ -40,7 +40,7 @@ contract Challenge {
 we got a server which will manage instace for our challenge at by generating a secret from `get_ticket.py` 
 `nc blockchain.bbctf.fluxus.co.in 5001`
 
-![[instance_server.png]]
+![[./images/instance_server.png]]
 launch a instance and you will get 
 ``` python
 uuid = "5759cffc-c638-451e-b41b-b8a15469ad49"
@@ -124,20 +124,20 @@ this function initaits our attack by calling `target.makeAGuess(_guess)`->`!chec
 
 ## Exploit!!!
 
-![[setting_rpc.png]]
+![[./images/setting_rpc.png]]
 Add ur PRC Url and ChainId
-![[import_Account.png]]
+![[./images/import_Account.png]]
 import your account to metamask
-![[got_account.png]]
+![[./images/got_account.png]]
 now open Remix connect it with your wallet and account. intracct with deployed setup contract by passting its address to AtAddress input box with `setup_contract` address by opening `setup.sol`
 now you will get address of challenge.
-![[setup_contract.png]]
+![[./images/setup_contract.png]]
 now add Challenge contract which you can have to intract.
-![[chall_contract.png]]
+![[./images/chall_contract.png]]
 now lets deploy attack contract by giving address which we got from instance in setup.
-![[attack_contract.png]]
+![[./images/attack_contract.png]]
 just give some value to guessIt and call get the flag by connecting to server and clicking on get flag with ur team_secret 
-![[instance_server.png]]
+![[./images/instance_server.png]]
 FLAG:
 	```flag{A1l_17s_r3quirED_is_a_1iI7lE_5oliDity}```
 That's how we got second blood and only 2 teams solved it.i learned so much while solving this challenge but i got deep understanding after writing this writeup.
